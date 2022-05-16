@@ -15,12 +15,12 @@ function UsersSection() {
     <section>
       <h2>Users Section</h2>
       <div className="scroll-container">
-        <ul class="users-list">
+        <ul className="users-list">
           {usersArray &&
             usersArray.map((user, index) => (
               <li
                 key={index}
-                class={user.gender === "male" ? `bg-blue` : `bg-pink`}
+                className={user.gender === "male" ? `bg-blue` : `bg-pink`}
               >
                 <img src={user.picture.medium} alt="Ritthy Ryan" />
                 <h3>{`${user.name.title} ${user.name.first} ${user.name.last}`}</h3>
