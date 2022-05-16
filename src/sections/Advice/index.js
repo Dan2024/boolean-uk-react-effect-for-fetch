@@ -16,6 +16,10 @@ function AdviceSection() {
       });
   }, [reqNewAdv]);
 
+  function handleFavorites() {
+    setFavorites([...new Set([...favorites, advice.advice])]);
+  }
+
   return (
     <section>
       <h2>Advice Section</h2>
@@ -23,17 +27,15 @@ function AdviceSection() {
         <h3>Some Advice</h3>
         <p>{advice && advice.advice}</p>
         <button onClick={() => setReqNewAdv(true)}>Get More Advice</button>
-        <button onClick={() => setFavorites([...favorites, advice])}>
-          Save to Favourties
-        </button>
+        <button onClick={handleFavorites}>Save to Favourties</button>
       </section>
       <section className="favourtite-slips-list">
         <h3>Favourite Advice Slips</h3>
         <ul>
           {favorites &&
-            favorites.map((advice, index) => (
-              <li key={index}>{advice.advice}</li>
-            ))}
+            favorites.map((advice, index) => {
+              return <li key={index}>{advice}</li>;
+            })}
         </ul>
       </section>
     </section>
