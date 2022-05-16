@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+// import { useEffect, useState } from "react"
 
 function AdviceSection() {
   return (
@@ -7,7 +7,7 @@ function AdviceSection() {
       <section className="adivce-slip"></section>
       <section className="favourtite-slips-list"></section>
     </section>
-  )
+  );
 }
 
-export default AdviceSection
+export default AdviceSection;
