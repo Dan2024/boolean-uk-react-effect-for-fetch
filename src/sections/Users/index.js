@@ -18,7 +18,10 @@ function UsersSection() {
         <ul class="users-list">
           {usersArray &&
             usersArray.map((user, index) => (
-              <li key={index} class="bg-blue">
+              <li
+                key={index}
+                class={user.gender === "male" ? `bg-blue` : `bg-pink`}
+              >
                 <img src={user.picture.medium} alt="Ritthy Ryan" />
                 <h3>{`${user.name.title} ${user.name.first} ${user.name.last}`}</h3>
                 <p>{user.email}</p>
